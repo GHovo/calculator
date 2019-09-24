@@ -18,7 +18,6 @@ class RomanNumber {
         map.put(10, "X");
 
     }
-
     static String toRoman(int number) {
         int l =  map.floorKey(number);
         if ( number == l ) {

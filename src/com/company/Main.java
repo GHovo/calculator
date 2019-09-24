@@ -27,6 +27,7 @@ public class Main {
        if(number1 <= 0 || number1 > 10 && number2 <= 0 || number2 > 10 ){
            throw new IllegalArgumentException("please write only from 1 to 10 numbers");
        }
+
        if(checkingNumbers(parts[0]).equals("rom") && checkingNumbers(parts[2]).equals("rom")){
            int result = calculation(operator, number1, number2);
            String roma = toRoman(result);

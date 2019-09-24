@@ -5,6 +5,7 @@ class Helper {
 
     static int calculation(String operator, int input1, int input2) {
         int result = 0;
+
         switch(operator) {
             case "+":
                 result = input1 + input2;
