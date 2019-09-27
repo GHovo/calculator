@@ -1,5 +1,8 @@
 package com.company;
 
+import static com.company.Constants.INPUT_NUMBER_ERROR;
+import static com.company.NumberSystem.ARABIC;
+import static com.company.NumberSystem.ROMAN;
 
 class Helper {
 
@@ -35,27 +38,28 @@ class Helper {
         if (value.equals("IX")) return 9;
         return Integer.parseInt(value);
     }
-    static String checkingNumbers(String num1) {
-        String[] romNumber = {"I","II","III","IV","V","VI","VII","VIII","IX","X"};
-        String[] arabNumber = {"1","2","3","4","5","6","7","8","9","10"};
-        for (int i = 0; i < romNumber.length -1 ; i++) {
-            if(num1.equals(romNumber[i])){
-                return "rom";
-            }
-            else if(num1.equals(arabNumber[i])){
-                return "arab";
+
+    static NumberSystem numberSystemOf(String num) {
+        String[] romNumber = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
+        String[] arabNumber = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+        for (int i = 0; i < romNumber.length - 1; i++) {
+            if (num.equals(romNumber[i])) {
+                return ROMAN;
+            } else if (num.equals(arabNumber[i])) {
+                return ARABIC;
             }
         }
-        return "OK";
-    }
+        throw new IllegalArgumentException(INPUT_NUMBER_ERROR);
 
-    static String checkingOperator(String operator) {
+    }
+    static boolean operatorIsCorrect(String operator) {
         String[] operators = {"+","-","*","/"};
         for (String operator1 : operators) {
             if (operator.equals(operator1)) {
-                return "ok";
+                return true;
             }
         }
-        return "error";
+        return false;
     }
+
 }
