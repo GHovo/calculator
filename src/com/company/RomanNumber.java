@@ -20,13 +20,9 @@ class RomanNumber {
     }
     static String toRoman(int number) {
         int l =  map.floorKey(number);
-        System.out.println("i = " + l);
         if ( number == l ) {
-            System.out.println("number = " + number + " = " + l + " = l");
-            System.out.println("get = " + map.get(number));
             return map.get(number);
         }
-        System.out.println("GVIDON =  " + map.get(l) + toRoman(number-l));
         return map.get(l) + toRoman(number-l);
     }
 
